@@ -1,0 +1,26 @@
+% Define symptoms for different diseases
+symptom(fever, influenza).
+symptom(cough, influenza).
+symptom(fatigue, influenza).
+symptom(headache, influenza).
+symptom(sore_throat, influenza).
+symptom(runny_nose, influenza).
+
+symptom(fever, common_cold).
+symptom(cough, common_cold).
+symptom(sore_throat, common_cold).
+symptom(runny_nose, common_cold).
+
+symptom(chest_pain, pneumonia).
+symptom(cough_with_mucus, pneumonia).
+symptom(fever, pneumonia).
+symptom(shortness_of_breath, pneumonia).
+
+% Define rules to infer diseases based on symptoms
+diagnose(Disease, Symptoms) :-
+    symptom(X, Disease),
+    member(X, Symptoms).
+
+% Example query:
+% To diagnose a disease based on symptoms, e.g., fever and cough:
+% ?- diagnose(Disease, [fever, cough]).

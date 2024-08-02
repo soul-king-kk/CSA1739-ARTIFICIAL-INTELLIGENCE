@@ -1,0 +1,28 @@
+% Define facts about birds and their flying capabilities
+bird(crow).
+bird(sparrow).
+bird(ostrich).
+
+can_fly(crow).
+can_fly(sparrow).
+cannot_fly(ostrich).
+
+% Define a predicate to check if a bird can fly
+can_fly_bird(Bird) :-
+    can_fly(Bird),
+    write(Bird),
+    write(' can fly.'),
+    nl.
+
+can_fly_bird(Bird) :-
+    cannot_fly(Bird),
+    write(Bird),
+    write(' cannot fly.'),
+    nl.
+
+% Queries
+% Example 1: Check if a crow can fly
+% ?- can_fly_bird(crow).
+
+% Example 2: Check if an ostrich can fly
+% ?- can_fly_bird(ostrich).

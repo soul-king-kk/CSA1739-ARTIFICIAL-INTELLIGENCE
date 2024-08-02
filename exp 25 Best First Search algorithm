@@ -1,0 +1,44 @@
+% Define successor states for the problem
+% For simplicity, we assume a tree structure where each state has child states
+
+% Successor states for state1
+successor(state1, state2, 4).
+successor(state1, state3, 5).
+successor(state1, state4, 2).
+
+% Successor states for state2
+successor(state2, state5, 3).
+successor(state2, state6, 6).
+
+% Successor states for state3
+successor(state3, state7, 7).
+successor(state3, state8, 8).
+
+% Define heuristic function
+% For simplicity, we assume a goal state and evaluate the desirability of each state based on its distance from the goal
+
+% Heuristic values for each state
+heuristic(state1, 10).
+heuristic(state2, 8).
+heuristic(state3, 6).
+heuristic(state4, 7).
+heuristic(state5, 5).
+heuristic(state6, 3).
+heuristic(state7, 4).
+heuristic(state8, 2).
+
+% Define Best First Search algorithm
+best_first_search(Start, Goal, Path) :-
+    best_first_search(Start, Goal, [Start], 0, Path).
+
+% Base case: when the current state is the goal state
+best_first_search(Goal, Goal, Path, _, Path).
+
+% Recursive case: find the next best state based on heuristic
+best_first_search(Current, Goal, Visited, CostSoFar, Path) :-
+    successor(Current, Next, Cost),
+    not(member(Next, Visited)),
+    NewCost is CostSoFar + Cost,
+    heuristic(Next, Heuristic),
+    TotalCost is NewCost + Heuristic,
+    best_first_search(Next, Goal, [Next|Visited], NewCost, Path).

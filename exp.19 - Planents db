@@ -1,0 +1,43 @@
+% Facts about planets
+planet(mercury).
+planet(venus).
+planet(earth).
+planet(mars).
+planet(jupiter).
+planet(saturn).
+planet(uranus).
+planet(neptune).
+
+% Facts about some properties of planets
+% For simplicity, only some properties are considered here
+% You can extend this with more properties if needed
+
+% Diameter in kilometers
+diameter(mercury, 4879).
+diameter(venus, 12104).
+diameter(earth, 12756).
+diameter(mars, 6792).
+diameter(jupiter, 142984).
+diameter(saturn, 120536).
+diameter(uranus, 51118).
+diameter(neptune, 49528).
+
+% Distance from the Sun in million kilometers
+distance_from_sun(mercury, 57.9).
+distance_from_sun(venus, 108.2).
+distance_from_sun(earth, 149.6).
+distance_from_sun(mars, 227.9).
+distance_from_sun(jupiter, 778.6).
+distance_from_sun(saturn, 1433.5).
+distance_from_sun(uranus, 2872.5).
+distance_from_sun(neptune, 4495.1).
+
+% Number of moons
+moons(mercury, 0).
+moons(venus, 0).
+moons(earth, 1).
+moons(mars, 2).
+moons(jupiter, 79).
+moons(saturn, 82).
+moons(uranus, 27).
+moons(neptune, 14).

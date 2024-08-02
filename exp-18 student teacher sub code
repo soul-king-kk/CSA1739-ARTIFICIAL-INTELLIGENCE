@@ -1,0 +1,32 @@
+% Facts
+student(john).
+student(anna).
+student(peter).
+
+teacher(mary).
+teacher(mark).
+teacher(sarah).
+
+subject(math, m101).
+subject(english, e101).
+subject(science, s101).
+
+% Relations
+enrolled(john, math).
+enrolled(john, english).
+enrolled(anna, english).
+enrolled(peter, science).
+
+teaches(mary, math).
+teaches(mark, english).
+teaches(sarah, science).
+
+% Queries
+student_of_subject(Student, Subject) :-
+    enrolled(Student, Subject).
+
+teacher_of_subject(Teacher, Subject) :-
+    teaches(Teacher, Subject).
+
+subject_code(Subject, Code) :-
+    subject(Subject, Code).
